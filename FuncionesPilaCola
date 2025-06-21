@@ -1,0 +1,17 @@
+-- Hacer funciones para manejo de Cola (enqueue / dequeue)
+-- Hacer funciones para manejo de Pila (push / pop)
+
+--COLA
+enqueue:: a->[a]->[a]
+enqueue y (x:xs) = (x:xs)++[y] -- El elemento 'y' se pone al final de la cola con ++
+
+dequeue:: [a]->(a,[a])
+dequeue (x:xs) = (x,xs) -- Muestro la cabeza (x) y el cuerpo (xs) separados
+
+--PILA
+push:: a->[a]->[a]
+push y (x:xs) = y:(x:xs) -- Coloco 'y' adelante de la pila
+
+pop:: [a]->(a,[a])
+pop (x:xs) = (x,xs) -- Saco el primero de la pila (x, la cabeza) y muestro
+main = print(pop [1,2,3])
